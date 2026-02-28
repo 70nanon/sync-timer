@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# SyncTimer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+複数人で同じタイマーを共有して、待ち時間をリアルタイムで同期できるWebアプリケーション。
 
-Currently, two official plugins are available:
+## 📋 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+SyncTimerは、複数のユーザーがリアルタイムで同じタイマーを共有できるアプリケーションです。
+Firebaseのリアルタイムデータベースを活用し、全員のタイマーが常に同期された状態を保ちます。
 
-## React Compiler
+## 🚀 技術スタック
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **フロントエンド**: React 18 + TypeScript
+- **ビルドツール**: Vite
+- **データベース**: Firebase Realtime Database / Firestore
+- **デプロイ**: Firebase Hosting（予定）
 
-## Expanding the ESLint configuration
+## 💻 開発環境のセットアップ
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# 依存関係のインストール
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# 開発サーバーの起動
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# ビルド
+npm run build
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# プレビュー
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📝 開発計画
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Phase 1: 基本機能の実装
+- [x] プロジェクトセットアップ（Vite + React + TypeScript）
+- [ ] Firebase SDK の統合
+- [ ] Firebase プロジェクトの作成と設定
+- [ ] タイマーコンポーネントの実装
+  - [ ] カウントダウン機能
+  - [ ] 開始/停止/リセット機能
+  - [ ] 時間設定UI
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Phase 2: リアルタイム同期機能
+- [ ] Firebase Realtime Database / Firestore のセットアップ
+- [ ] タイマー状態のリアルタイム同期
+- [ ] ルーム機能（複数のタイマーセッション）
+- [ ] ルームID生成・共有機能
+
+### Phase 3: UI/UX改善
+- [ ] レスポンシブデザインの実装
+- [ ] アニメーション・トランジション
+- [ ] ダークモード対応
+- [ ] 通知機能（タイマー終了時）
+
+### Phase 4: 追加機能
+- [ ] ユーザー名表示機能
+- [ ] 参加者リスト表示
+- [ ] タイマー履歴
+- [ ] プリセット時間設定
+
+### Phase 5: デプロイ・運用
+- [ ] Firebase Hosting へのデプロイ
+- [ ] カスタムドメイン設定
+- [ ] パフォーマンス最適化
+- [ ] エラーハンドリング・ロギング
+
+## 🤝 コントリビューション
+
+このプロジェクトは開発中です。機能追加や改善の提案は Issue や Pull Request でお願いします。
+
+## 📄 ライセンス
+
+MIT
