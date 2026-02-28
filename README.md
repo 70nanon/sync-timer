@@ -14,13 +14,6 @@ Firebaseのリアルタイムデータベースを活用し、全員のタイマ
 - **データベース**: Firebase Realtime Database / Firestore
 - **デプロイ**: Firebase Hosting（予定）
 
-## � ドキュメント
-
-詳細な設計・実装ドキュメントは [docs/](docs/) ディレクトリを参照してください：
-
-- [実装計画](docs/implementation-plan.md) - フェーズごとの詳細なタスク
-- [データベーススキーマ](docs/database-schema.md) - Firebaseのデータ構造設計
-- [機能仕様](docs/features.md) - 各機能の詳細仕様
 
 ## �💻 開発環境のセットアップ
 
@@ -76,6 +69,8 @@ npm run preview
 ## 🤝 コントリビューション
 
 このプロジェクトは開発中です。機能追加や改善の提案は Issue や Pull Request でお願いします。
+
+開発に参加する場合は [CONTRIBUTING.md](CONTRIBUTING.md) を必ずお読みください。
 
 ## 📄 ライセンス
 
